@@ -26,21 +26,21 @@ function Qb(name, fileExtension = 'jpeg') {
   
   // STEP 4: PARSE DATA INTO CODE SO APP CAN SEE
   let parsedQb = JSON.parse(retrievedQb);
-  console.log('parsedProducts >>>>>>>>', parsedQb);
+  console.log('parsedQb >>>>>>>>', parsedQb);
   
   if (parsedQb) {
     productArray = parsedQb;
   } else {
-    let rodgers = new Products('ar');
-    let brady = new Products('brady');
-    let brees = new Products('brees');
-    let dan = new Products('dan');
-    let elway = new Products('elway');
-    let joe = new Products('joe');
-    let mahomes = new Products('mahomes');
-    let manning = new Products('manning');
-    let roger = new Products('roger');
-    let young = new Products('young');
+    let rodgers = new Qb('ar');
+    let brady = new Qb('brady');
+    let brees = new Qb('brees');
+    let dan = new Qb('dan');
+    let elway = new Qb('elway');
+    let joe = new Qb('joe');
+    let mahomes = new Qb('mahomes');
+    let manning = new Qb('manning');
+    let roger = new Qb('roger');
+    let young = new Qb('young');
     
     productArray.push(rodgers, brady, brees, dan, elway, joe, mahomes, manning, roger, young);
   }
