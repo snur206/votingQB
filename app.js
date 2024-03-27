@@ -6,6 +6,7 @@ let voteCount = 25;
 let productArray = [];
 
 
+
 function Qb(name, fileExtension = 'jpeg') {
     this.name = name;
     this.imagePath = `img/${name}.${fileExtension}`;
