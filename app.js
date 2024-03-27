@@ -5,7 +5,12 @@
 let voteCount = 25;
 let productArray = [];
 
+let imageContainer = document.getElementById('img-container');
+let imgOne = document.getElementById('img-One');
+let imgTwo = document.getElementById('img-two');
 
+let resultBtn = document.getElementById('show-result-btn');
+let resultContainer = document.getElementById('results-container');
 
 function Qb(name, fileExtension = 'jpeg') {
     this.name = name;
