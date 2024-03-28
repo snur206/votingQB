@@ -1,7 +1,5 @@
 'use strict'
 
-// #pragma Globals
-
 let voteCount = 25;
 let productArray = [];
 
@@ -11,6 +9,63 @@ let imgTwo = document.getElementById('img-two');
 
 let resultBtn = document.getElementById('show-result-btn');
 let resultContainer = document.getElementById('results-container');
+
+let chartContext = document.getElementById('my-chart').getContext('2d');
+
+function handleShowChart() {
+    if (voteCount === 0) {// todo remove event listeners from images}
+      let qbNames = [];
+      let qbViews = [];
+      let qbClicks = [];
+  
+      for (let i = 0; i < qbArray.length; i++) {
+        qbNames.push(qbArray[i].name);
+        qbViews.push(qbArray[i].views);
+        qbClicks.push(qbArray[i].clicks);
+      }
+      let chartConfig = {
+        type: 'bar',
+        data: {
+          labels: qbNames,
+          datasets: [{
+            label: '# of Views',
+            data: qbViews,
+            backgroundColor: 'yellow',
+          }, {
+            label: '# of Clicks',
+            data: qbClicks,
+            backgroundColor: 'aqua',
+          }],
+        },
+        options: {},
+      };
+      let myChart = new Chart(chartContext, chartConfig);
+      resultsBtn.removeEventListener('click', handleShowChart);
+    };
+
+function randomProduct() {
+    return Math.floor(Math.random() * qbArray.length);
+}
+  
+let indexArray = [];
+let previousArray = [];
+
+function uniqueImgChecker() {
+    while (indexArray.length < 2) {
+        let randomImg = randomQb();
+        while (indexArray.includes(randomImg) || previousArray.includes(randomImg)) {
+            randomImg = randomQb();
+        }
+        indexArray.push(randomImg);
+        previousArray.push(randomImg);
+        console.log(indexArray, previousArray);
+        if (previousArray.length >= 4) {
+            previousArray.shift();
+        }
+    }
+    return (indexArray);
+}
+
 
 function Qb(name, fileExtension = 'jpeg') {
     this.name = name;
