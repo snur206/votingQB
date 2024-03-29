@@ -41,9 +41,9 @@ function handleShowChart() {
       };
       let myChart = new Chart(chartContext, chartConfig);
       resultsBtn.removeEventListener('click', handleShowChart);
-    };
+    }
 
-function randomProduct() {
+function randomQb() {
     return Math.floor(Math.random() * qbArray.length);
 }
   
@@ -64,6 +64,32 @@ function uniqueImgChecker() {
         }
     }
     return (indexArray);
+}
+
+function renderImg() {
+    uniqueImgChecker();
+    let imgOneIndex = indexArray.shift();
+    let imgTwoIndex = indexArray.shift();
+
+    imgOne.src = qbArray[imgOneIndex].imagePath;
+    imgTwo.src = qbArray[imgTwoIndex].imagePath;
+
+    imgOne.alt = qbArray[imgOneIndex].name;
+    imgTwo.alt = qbArray[imgTwoIndex].name;
+
+    qbArray[imgOneIndex].views++;
+    qbArray[imgTwoIndex].views++;
+}
+
+function handleShowResults() {
+    if (voteCount === 0) {
+        for (let i = 0; i < qbArray.length; i++) {
+            let liElem = document.createElement('li');
+            liElem.textContent = `${qbArray[i].name} was viewed: ${qbArray[i].views} time(s) and clicked: ${qbArray[i].clicks}`;
+            resultContainer.appendChild(liElem);
+        }
+        resultBtn.removeEventListener('click', handleShowResults);
+    }
 }
 
 
