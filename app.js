@@ -3,7 +3,7 @@
 let voteCount = 25;
 let productArray = [];
 
-let imageContainer = document.getElementById('img-container');
+let imgContainer = document.getElementById('img-container');
 let imgOne = document.getElementById('img-One');
 let imgTwo = document.getElementById('img-two');
 
@@ -92,6 +92,21 @@ function handleShowResults() {
     }
 }
 
+function handleImgClick() {
+    let qbClicked = event.target.alt;
+
+    for (let i = 0; i < qbArray.length; i++) {
+        if (qbArray[i].name === qbClicked) {
+          qbArray[i].clicks++;
+    
+          voteCount--;
+          renderImg();
+        }
+    }  
+    if (voteCount === 0) {
+        imgContainer.removeEventListener('click', handleImgClick);
+    }
+}
 
 function Qb(name, fileExtension = 'jpeg') {
     this.name = name;
