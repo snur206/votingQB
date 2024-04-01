@@ -39,3 +39,16 @@ img {
     border-style: solid;
     border-width: 3px;
 }
+
+#show-results-btn {
+    width: max-content;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Nanum Myeongjo', serif;
+    padding: 7px;
+    cursor: pointer;
+    color: whitesmoke;
+    background-color: gold;
+    margin: 25px auto;
+    height: 25px;
+}
+
