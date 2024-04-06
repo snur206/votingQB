@@ -133,7 +133,7 @@ function Qb(name, fileExtension = 'jpeg') {
   if (parsedQb) {
     productArray = parsedQb;
   } else {
-    let rodgers = new Qb('ar');
+    let aaron = new Qb('ar');
     let brady = new Qb('brady');
     let brees = new Qb('brees');
     let dan = new Qb('dan');
@@ -144,6 +144,6 @@ function Qb(name, fileExtension = 'jpeg') {
     let roger = new Qb('roger');
     let young = new Qb('young');
     
-    productArray.push(rodgers, brady, brees, dan, elway, joe, mahomes, manning, roger, young);
+    productArray.push(aaron, brady, brees, dan, elway, joe, mahomes, manning, roger, young);
   }
   console.log('qbArray after construction >>>', qbArray);
