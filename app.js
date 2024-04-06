@@ -1,7 +1,7 @@
 'use strict'
 
 let voteCount = 25;
-let productArray = [];
+let qbArray = [];
 
 let imgContainer = document.getElementById('img-container');
 let imgOne = document.getElementById('img-One');
@@ -131,7 +131,7 @@ function Qb(name, fileExtension = 'jpeg') {
   console.log('parsedQb >>>>>>>>', parsedQb);
   
   if (parsedQb) {
-    productArray = parsedQb;
+    qbArray = parsedQb;
   } else {
     let aaron = new Qb('ar');
     let brady = new Qb('brady');
@@ -144,6 +144,6 @@ function Qb(name, fileExtension = 'jpeg') {
     let roger = new Qb('roger');
     let young = new Qb('young');
     
-    productArray.push(aaron, brady, brees, dan, elway, joe, mahomes, manning, roger, young);
+    qbArray.push(aaron, brady, brees, dan, elway, joe, mahomes, manning, roger, young);
   }
   console.log('qbArray after construction >>>', qbArray);
