@@ -146,4 +146,4 @@ function Qb(name, fileExtension = 'jpeg') {
     
     productArray.push(rodgers, brady, brees, dan, elway, joe, mahomes, manning, roger, young);
   }
-  console.log('productArray after construction >>>', productArray);
+  console.log('qbArray after construction >>>', qbArray);
