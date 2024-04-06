@@ -73,13 +73,9 @@ function renderImg() {
 
     imgOne.src = qbArray[imgOneIndex].imagePath;
     imgTwo.src = qbArray[imgTwoIndex].imagePath;
-    imgThree.src = qbArray[imgThreeIndex].imagePath;
-    imgFour.src = qbArray[imgFourInde].imagePath;
 
     imgOne.alt = qbArray[imgOneIndex].name;
     imgTwo.alt = qbArray[imgTwoIndex].name;
-    imgThree.src = qbArray[imgThreeIndex].name;
-    imgFour.src = qbArray[imgFourIndex].name;
 
     qbArray[imgOneIndex].views++;
     qbArray[imgTwoIndex].views++;
