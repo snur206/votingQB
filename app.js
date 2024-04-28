@@ -105,6 +105,12 @@ function handleImgClick() {
     }  
     if (voteCount === 0) {
         imgContainer.removeEventListener('click', handleImgClick);
+
+        let stringifiedQb = JSON.stringify(qbArray);
+
+        console.log('stringified qb >>>>', stringifiedQb);
+
+        localStorage.setItem('myQb', stringifiedQb);
     }
 }
 
@@ -146,4 +152,10 @@ function Qb(name, fileExtension = 'jpeg') {
     
     qbArray.push(aaron, brady, brees, dan, elway, joe, mahomes, manning, roger, young);
   }
-  console.log('qbArray after construction >>>', qbArray);
+console.log('qbArray after construction >>>', qbArray);
+
+renderImg();
+
+imgContainer.addEventListener('click', handleImgClick);
+resultBtn.addEventListener('click', handleShowChart);
+resultBtn.addEventListener('click', handleShowResults);
