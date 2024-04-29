@@ -156,6 +156,3 @@ console.log('qbArray after construction >>>', qbArray);
 
 renderImg();
 
-imgContainer.addEventListener('click', handleImgClick);
-resultBtn.addEventListener('click', handleShowChart);
-resultBtn.addEventListener('click', handleShowResults);
